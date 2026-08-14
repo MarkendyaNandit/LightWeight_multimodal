@@ -1,0 +1,10 @@
+torch>=2.0.0
+torchvision
+open-clip-torch
+timm
+scikit-learn
+matplotlib
+opencv-python
+tqdm
+tensorboard
+wandb

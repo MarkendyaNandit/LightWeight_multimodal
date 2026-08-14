@@ -1,0 +1,956 @@
+{
+  "metrics": {
+    "auroc": 0.3678918169209431,
+    "accuracy": 0.21374045801526717,
+    "precision": 0.5,
+    "recall": 0.038834951456310676,
+    "f1_score": 0.07207207207207207,
+    "defect_breakdown": {
+      "good": {
+        "accuracy": 0.8571428571428571,
+        "correct": 24,
+        "total": 28
+      },
+      "contamination": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 25
+      },
+      "crack": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 27
+      },
+      "hole": {
+        "accuracy": 0.038461538461538464,
+        "correct": 1,
+        "total": 26
+      },
+      "combined": {
+        "accuracy": 0.12,
+        "correct": 3,
+        "total": 25
+      }
+    },
+    "threshold_used": 0.0018818080192431808
+  },
+  "per_image_results": [
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\000.png",
+      "label": 0,
+      "score": 0.0015662696678191423,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\001.png",
+      "label": 0,
+      "score": 0.001391176600009203,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\002.png",
+      "label": 0,
+      "score": 0.0017975594382733107,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\003.png",
+      "label": 0,
+      "score": 0.0016555371694266796,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\004.png",
+      "label": 0,
+      "score": 0.0014710596296936274,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\005.png",
+      "label": 0,
+      "score": 0.0016825920902192593,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\006.png",
+      "label": 0,
+      "score": 0.001410110155120492,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\007.png",
+      "label": 0,
+      "score": 0.0013870701659470797,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\008.png",
+      "label": 0,
+      "score": 0.0016841103788465261,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\009.png",
+      "label": 0,
+      "score": 0.001608343212865293,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\010.png",
+      "label": 0,
+      "score": 0.0013185484567657113,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\011.png",
+      "label": 0,
+      "score": 0.0013738111592829227,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\012.png",
+      "label": 0,
+      "score": 0.0016039350302889943,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\013.png",
+      "label": 0,
+      "score": 0.0013363300822675228,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\014.png",
+      "label": 0,
+      "score": 0.0014338195323944092,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\015.png",
+      "label": 0,
+      "score": 0.0016728952759876847,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\016.png",
+      "label": 0,
+      "score": 0.0022184562403708696,
+      "prediction": 1,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\017.png",
+      "label": 0,
+      "score": 0.0016638404922559857,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\018.png",
+      "label": 0,
+      "score": 0.0019502327777445316,
+      "prediction": 1,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\019.png",
+      "label": 0,
+      "score": 0.0018309572478756309,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\020.png",
+      "label": 0,
+      "score": 0.001795693882741034,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\021.png",
+      "label": 0,
+      "score": 0.002397204050794244,
+      "prediction": 1,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\022.png",
+      "label": 0,
+      "score": 0.001949454192072153,
+      "prediction": 1,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\023.png",
+      "label": 0,
+      "score": 0.0014215116389095783,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\024.png",
+      "label": 0,
+      "score": 0.0017453677719458938,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\025.png",
+      "label": 0,
+      "score": 0.0016938301268965006,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\026.png",
+      "label": 0,
+      "score": 0.0017238011350855231,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\good\\rgb\\027.png",
+      "label": 0,
+      "score": 0.001866474049165845,
+      "prediction": 0,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\000.png",
+      "label": 1,
+      "score": 0.0012177282478660345,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\001.png",
+      "label": 1,
+      "score": 0.0015441023278981447,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\002.png",
+      "label": 1,
+      "score": 0.0014570757048204541,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\003.png",
+      "label": 1,
+      "score": 0.0016251691849902272,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\004.png",
+      "label": 1,
+      "score": 0.0013787081697955728,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\005.png",
+      "label": 1,
+      "score": 0.0015583406202495098,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\006.png",
+      "label": 1,
+      "score": 0.0013807442737743258,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\007.png",
+      "label": 1,
+      "score": 0.001468334230594337,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\008.png",
+      "label": 1,
+      "score": 0.0014540886040776968,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\009.png",
+      "label": 1,
+      "score": 0.0015548954252153635,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\010.png",
+      "label": 1,
+      "score": 0.0014873042237013578,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\011.png",
+      "label": 1,
+      "score": 0.0015434883534908295,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\012.png",
+      "label": 1,
+      "score": 0.0014924274291843176,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\013.png",
+      "label": 1,
+      "score": 0.0011379020288586617,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\014.png",
+      "label": 1,
+      "score": 0.0017238507280126214,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\015.png",
+      "label": 1,
+      "score": 0.0016354353865608573,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\016.png",
+      "label": 1,
+      "score": 0.0014321008929982781,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\017.png",
+      "label": 1,
+      "score": 0.0012938366271555424,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\018.png",
+      "label": 1,
+      "score": 0.0018348372541368008,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\019.png",
+      "label": 1,
+      "score": 0.0018384914146736264,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\020.png",
+      "label": 1,
+      "score": 0.0017856808844953775,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\021.png",
+      "label": 1,
+      "score": 0.001859414973296225,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\022.png",
+      "label": 1,
+      "score": 0.0012613276485353708,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\023.png",
+      "label": 1,
+      "score": 0.0018326775170862675,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\contamination\\rgb\\024.png",
+      "label": 1,
+      "score": 0.001746912021189928,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\000.png",
+      "label": 1,
+      "score": 0.001497926888987422,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\001.png",
+      "label": 1,
+      "score": 0.0014394079335033894,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\002.png",
+      "label": 1,
+      "score": 0.0016498746117576957,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\003.png",
+      "label": 1,
+      "score": 0.0011694454587996006,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\004.png",
+      "label": 1,
+      "score": 0.0016372272511944175,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\005.png",
+      "label": 1,
+      "score": 0.0015782562550157309,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\006.png",
+      "label": 1,
+      "score": 0.0014781089266762137,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\007.png",
+      "label": 1,
+      "score": 0.0015427812468260527,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\008.png",
+      "label": 1,
+      "score": 0.0011233218247070909,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\009.png",
+      "label": 1,
+      "score": 0.0017895967466756701,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\010.png",
+      "label": 1,
+      "score": 0.001282816519960761,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\011.png",
+      "label": 1,
+      "score": 0.0018562423065304756,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\012.png",
+      "label": 1,
+      "score": 0.001719568739645183,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\013.png",
+      "label": 1,
+      "score": 0.0015358941163867712,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\014.png",
+      "label": 1,
+      "score": 0.0015138675225898623,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\015.png",
+      "label": 1,
+      "score": 0.001431132317520678,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\016.png",
+      "label": 1,
+      "score": 0.001487348577938974,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\017.png",
+      "label": 1,
+      "score": 0.0014421382220461965,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\018.png",
+      "label": 1,
+      "score": 0.0013955536996945739,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\019.png",
+      "label": 1,
+      "score": 0.0014865730190649629,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\020.png",
+      "label": 1,
+      "score": 0.0018788843881338835,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\021.png",
+      "label": 1,
+      "score": 0.001637811423279345,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\022.png",
+      "label": 1,
+      "score": 0.0017057528020814061,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\023.png",
+      "label": 1,
+      "score": 0.0016101249493658543,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\024.png",
+      "label": 1,
+      "score": 0.001349541125819087,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\025.png",
+      "label": 1,
+      "score": 0.0018603145144879818,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\crack\\rgb\\026.png",
+      "label": 1,
+      "score": 0.0013517942279577255,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\000.png",
+      "label": 1,
+      "score": 0.0013415362918749452,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\001.png",
+      "label": 1,
+      "score": 0.0013530990108847618,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\002.png",
+      "label": 1,
+      "score": 0.0017097010277211666,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\003.png",
+      "label": 1,
+      "score": 0.0013191797770559788,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\004.png",
+      "label": 1,
+      "score": 0.0014489521272480488,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\005.png",
+      "label": 1,
+      "score": 0.0013664279831573367,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\006.png",
+      "label": 1,
+      "score": 0.0014595690881833434,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\007.png",
+      "label": 1,
+      "score": 0.0014051743783056736,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\008.png",
+      "label": 1,
+      "score": 0.0018081845482811332,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\009.png",
+      "label": 1,
+      "score": 0.0011945775477215648,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\010.png",
+      "label": 1,
+      "score": 0.0012823807774111629,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\011.png",
+      "label": 1,
+      "score": 0.0017733817221596837,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\012.png",
+      "label": 1,
+      "score": 0.0019051935523748398,
+      "prediction": 1,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\013.png",
+      "label": 1,
+      "score": 0.0013014755677431822,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\014.png",
+      "label": 1,
+      "score": 0.0017174850217998028,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\015.png",
+      "label": 1,
+      "score": 0.001692650723271072,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\016.png",
+      "label": 1,
+      "score": 0.001307542435824871,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\017.png",
+      "label": 1,
+      "score": 0.0014320607297122478,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\018.png",
+      "label": 1,
+      "score": 0.0014928296441212296,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\019.png",
+      "label": 1,
+      "score": 0.0010619055246934295,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\020.png",
+      "label": 1,
+      "score": 0.001481356448493898,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\021.png",
+      "label": 1,
+      "score": 0.0013554529286921024,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\022.png",
+      "label": 1,
+      "score": 0.0015914025716483593,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\023.png",
+      "label": 1,
+      "score": 0.0017563459696248174,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\024.png",
+      "label": 1,
+      "score": 0.0017035361379384995,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\hole\\rgb\\025.png",
+      "label": 1,
+      "score": 0.0014764675870537758,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\000.png",
+      "label": 1,
+      "score": 0.0016470880946144462,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\001.png",
+      "label": 1,
+      "score": 0.0016472635325044394,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\002.png",
+      "label": 1,
+      "score": 0.001905648852698505,
+      "prediction": 1,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\003.png",
+      "label": 1,
+      "score": 0.001617084490135312,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\004.png",
+      "label": 1,
+      "score": 0.0017507250886410475,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\005.png",
+      "label": 1,
+      "score": 0.002059218008071184,
+      "prediction": 1,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\006.png",
+      "label": 1,
+      "score": 0.001598659553565085,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\007.png",
+      "label": 1,
+      "score": 0.0018654386512935162,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\008.png",
+      "label": 1,
+      "score": 0.0017552283825352788,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\009.png",
+      "label": 1,
+      "score": 0.0019158032955601811,
+      "prediction": 1,
+      "is_correct": true
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\010.png",
+      "label": 1,
+      "score": 0.001300810370594263,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\011.png",
+      "label": 1,
+      "score": 0.001348942518234253,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\012.png",
+      "label": 1,
+      "score": 0.0016164276748895645,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\013.png",
+      "label": 1,
+      "score": 0.001544969156384468,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\014.png",
+      "label": 1,
+      "score": 0.0013664383441209793,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\015.png",
+      "label": 1,
+      "score": 0.0014586218167096376,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\016.png",
+      "label": 1,
+      "score": 0.0014060323592275381,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\017.png",
+      "label": 1,
+      "score": 0.00136219197884202,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\018.png",
+      "label": 1,
+      "score": 0.0012001274153590202,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\019.png",
+      "label": 1,
+      "score": 0.0017833899473771453,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\020.png",
+      "label": 1,
+      "score": 0.0014450737508013844,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\021.png",
+      "label": 1,
+      "score": 0.0016936492174863815,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\022.png",
+      "label": 1,
+      "score": 0.001473023323342204,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\023.png",
+      "label": 1,
+      "score": 0.00129006861243397,
+      "prediction": 0,
+      "is_correct": false
+    },
+    {
+      "path": "C:\\Users\\Supratheek Reddy\\Desktop\\sdc project 3rd year\\cookie\\cookie\\test\\combined\\rgb\\024.png",
+      "label": 1,
+      "score": 0.001466509304009378,
+      "prediction": 0,
+      "is_correct": false
+    }
+  ]
+}

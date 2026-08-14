@@ -1,0 +1,22 @@
+# RGB Encoder Module — Dependencies
+# ===================================
+# Install with: pip install -r requirements.txt
+#
+# This covers ONLY the RGB Encoder module.
+# Other modules (Depth, CLIP, GACM) will have their own requirements.
+
+# Core framework
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Numerical computing
+numpy>=1.24.0
+
+# Machine learning metrics (AUROC, F1, etc.)
+scikit-learn>=1.2.0
+
+# Image loading
+Pillow>=9.4.0
+
+# Visualization (optional, for t-SNE plots)
+matplotlib>=3.7.0

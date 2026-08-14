@@ -1,0 +1,78 @@
+# ============================================================
+#  Depth MobileNetV3 Encoder — Configuration
+# ============================================================
+
+# ----- Paths ------------------------------------------------
+dataset:
+  root: "c:/anamoly"
+  category: "cookie"
+  train_split: "train/good"
+  val_split: "validation/good"
+  depth_subdir: "xyz"           # sub-folder inside each split
+
+# ----- Output -----------------------------------------------
+output:
+  run_dir: "c:/anamoly/depth_encoder/runs"
+  checkpoint_dir: "c:/anamoly/depth_encoder/checkpoints"
+  features_dir: "c:/anamoly/depth_encoder/features"
+
+# ----- Preprocessing ----------------------------------------
+preprocessing:
+  image_size: 224               # resize depth map to 224x224
+  normalize_imagenet: true      # apply ImageNet mean/std after 3-channel repeat
+  invalid_fill_method: "median" # how to fill NaN/zero background pixels
+                                # options: "median", "min", "zero"
+
+# ----- Model ------------------------------------------------
+model:
+  backbone: "mobilenet_v3_large"
+  pretrained: true
+  embedding_dim: 256
+  projection_hidden_dim: 512
+  dropout: 0.1
+  # Intermediate layers to tap for feature maps (MobileNetV3 features indices)
+  feature_layers: [3, 7, 13]    # indices into backbone.features
+
+# ----- VICReg -----------------------------------------------
+vicreg:
+  expander_dim: 2048            # expander MLP output dim (SSL only)
+  sim_coeff: 25.0               # invariance loss weight  (lambda)
+  std_coeff: 25.0               # variance loss weight    (mu)
+  cov_coeff: 1.0                # covariance loss weight  (nu)
+  eps: 0.0001                   # numerical stability for variance term
+
+# ----- Augmentation -----------------------------------------
+augmentation:
+  random_resized_crop: true
+  crop_scale: [0.5, 1.0]
+  random_horizontal_flip: true
+  random_vertical_flip: false
+  random_rotation_degrees: 15
+  gaussian_blur: true
+  blur_kernel: 3
+  blur_sigma: [0.1, 1.0]
+  random_erasing: true          # simulate occlusion / sensor drop-out
+  erasing_prob: 0.2
+
+# ----- Training ---------------------------------------------
+training:
+  epochs: 100
+  batch_size: 32
+  num_workers: 4
+  pin_memory: true
+  seed: 42
+
+  optimizer:
+    type: "adamw"
+    lr: 0.0003
+    weight_decay: 0.0001
+    betas: [0.9, 0.999]
+
+  scheduler:
+    type: "cosine"
+    warmup_epochs: 10
+    min_lr: 0.000001
+
+  grad_clip: 1.0
+  log_every: 5                  # log every N epochs
+  save_every: 10                # checkpoint every N epochs

@@ -1,0 +1,31 @@
+Here is the exact breakdown of the properties, architecture depth, and parameter counts for the model pipeline we just built.
+
+Because we use a frozen foundation model (CLIP) connected to our custom module (OCTA), there are two distinct parts to look at:
+
+1. The Pre-trained Part: CLIP Text Encoder (ViT-B/32)
+This is the frozen AI brain that translates your text into numbers.
+
+Depth: 12 Transformer layers
+Width: 512 dimensions
+Attention Heads: 8 heads
+Total Parameters: ~63 Million parameters (Frozen)
+Training Data: It was trained by OpenAI on 400 Million image-text pairs scraped from the internet (the WebImageText dataset). This massive dataset is why it already perfectly understands concepts like "laptop", "scratch", "car", and "flawless" without you having to teach it.
+2. The Custom Part: OCTA Module (Our Code)
+This is the custom adapter we wrote to fine-tune those text embeddings for your specific factory anomalies.
+
+Architecture Depth:
+1 MoE Routing Layer
+4 Expert MLP Networks (2 layers each)
+1 Cross-Attention Layer (with a learnable prototype)
+1 Nonlinear Output Layer (2 layers)
+Width: 768 dimensions (to perfectly match the DINO visual model)
+Parameter Breakdown:
+CLIP Projection Layer: 393,984 parameters
+Mixture of Experts (MoE): 18,892,804 parameters
+Cross-Attention: 1,772,544 parameters
+Final Output Layer: 1,181,184 parameters
+Total Trainable Parameters: 22,240,516 (22.2 Million)
+Summary
+In total, when the model runs, it uses about 85 Million parameters, but you only have to train 22.2 Million of them.
+
+Because the frozen CLIP model has already read 400 million texts/images, your 22.2M parameters don't need millions of images to learn. When Member 3 writes the training loop, they will likely only need a few hundred photos of normal laptops/cars to successfully train those 22.2 million parameters to spot anomalies!

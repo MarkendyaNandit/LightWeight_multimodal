@@ -1,0 +1,35 @@
+{
+  "auroc": 0.5755894590846047,
+  "optimal_threshold": 1.0816459655761719,
+  "accuracy": 0.8015267175572519,
+  "precision": 0.7984496124031008,
+  "recall": 1.0,
+  "f1_score": 0.8879310344827587,
+  "defect_breakdown": {
+    "good": {
+      "accuracy": 0.07142857142857142,
+      "correct": 2,
+      "total": 28
+    },
+    "contamination": {
+      "accuracy": 1.0,
+      "correct": 25,
+      "total": 25
+    },
+    "crack": {
+      "accuracy": 1.0,
+      "correct": 27,
+      "total": 27
+    },
+    "hole": {
+      "accuracy": 1.0,
+      "correct": 26,
+      "total": 26
+    },
+    "combined": {
+      "accuracy": 1.0,
+      "correct": 25,
+      "total": 25
+    }
+  }
+}
