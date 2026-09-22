@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightweight Multimodal Industrial Anomaly Diagnostics</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Top Navigation -->
+        <header class="navbar">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">LIGHTWEIGHT<span class="brand-accent">.AI</span></span>
+                    <span class="brand-sub">Lightweight Multimodal Anomaly Inspection System</span>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <div class="category-selector-box">
+                    <label for="categorySelect">Target Class:</label>
+                    <select id="categorySelect">
+                        <option value="phone_screen" selected>Phone Screen (Display Glass)</option>
+                        <option value="car_metal">Car Metal (NEU-DET Surface)</option>
+                        <option value="pcb">PCB Circuit (DeepPCB Board)</option>
+                        <option value="cookie">Cookie (MVTec 3D)</option>
+                        <option value="bagel">Bagel (MVTec 3D)</option>
+                        <option value="cable_gland">Cable Gland (MVTec 3D)</option>
+                        <option value="carrot">Carrot (MVTec 3D)</option>
+                        <option value="dowel">Dowel (MVTec 3D)</option>
+                        <option value="foam">Foam (MVTec 3D)</option>
+                        <option value="peach">Peach (MVTec 3D)</option>
+                        <option value="potato">Potato (MVTec 3D)</option>
+                        <option value="rope">Rope (MVTec 3D)</option>
+                        <option value="tire">Tire (MVTec 3D)</option>
+                    </select>
+                </div>
+
+                <div class="status-pill" id="systemStatusPill">
+                    <span class="status-dot"></span>
+                    <span id="systemStatusText">Model Ready</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Inspection Studio -->
+        <main class="studio-container">
+            <!-- Left Workspace: Media Input & Interactive Viewport -->
+            <section class="viewport-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                        <span>Inspection Viewport</span>
+                    </div>
+                    <div class="viewport-tools">
+                        <button class="tool-btn" id="btnReset" title="Reset Viewport">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+                            <span>Clear</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="viewport-stage" id="dropZone">
+                    <!-- Placeholder / Upload Prompt -->
+                    <div class="upload-empty-state" id="emptyState">
+                        <div class="upload-icon-circle">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                        </div>
+                        <h3>Upload Product Image for Inspection</h3>
+                        <p>Drag & drop photo here, or click to browse (Compulsory)</p>
+                        <div class="upload-actions">
+                            <label class="btn-primary" for="fileInput">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                <span>Browse Image</span>
+                            </label>
+                            <button class="btn-secondary" id="btnOpenWebcam">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                                <span>Use Camera</span>
+                            </button>
+                        </div>
+                        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                    </div>
+
+                    <!-- Viewport Stage Tabs (Dual View) -->
+                    <div class="viewport-view-tabs" id="viewportTabs" style="display: none;">
+                        <button class="view-tab-btn active" data-view="dual">Dual Comparison</button>
+                        <button class="view-tab-btn" data-view="cropped">Cropped Object</button>
+                        <button class="view-tab-btn" data-view="original">Original Photo</button>
+                    </div>
+
+                    <!-- Image Display & Scanning Overlay -->
+                    <div class="active-image-view" id="activeImageView" style="display: none;">
+                        <div class="dual-view-container" id="dualViewContainer">
+                            <div class="view-card" id="originalViewCard">
+                                <div class="view-card-header">
+                                    <span>Original Input Photo</span>
+                                    <span class="dim-pill" id="rawDimensionsBadge">-- × --</span>
+                                </div>
+                                <div class="view-card-img-wrap">
+                                    <img id="previewImage" src="" alt="Original Uploaded Target">
+                                    <div class="radar-scan-overlay" id="radarScanOverlay">
+                                        <div class="radar-line"></div>
+                                        <div class="radar-grid"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="view-card" id="croppedViewCard">
+                                <div class="view-card-header">
+                                    <span>Auto-Cropped Object (Fix C + A)</span>
+                                    <span class="dim-pill" id="cropDimensionsBadge">-- × --</span>
+                                </div>
+                                <div class="view-card-img-wrap">
+                                    <img id="croppedPreviewImage" src="" alt="Auto-Cropped Object Target">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Webcam Live Modal/Overlay inside stage -->
+                    <div class="webcam-stage-overlay" id="webcamOverlay" style="display: none;">
+                        <video id="webcamFeed" autoplay playsinline muted></video>
+                        <div class="webcam-hud">
+                            <button class="btn-capture" id="btnCaptureFrame" title="Capture Image">
+                                <div class="capture-inner"></div>
+                            </button>
+                            <button class="btn-close-webcam" id="btnCloseWebcam" title="Close Camera">✕</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Controls Bar -->
+                <div class="control-dock">
+                    <div class="prompt-input-group">
+                        <div class="prompt-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <input type="text" id="textPrompt" placeholder="Text Prompt (Optional: e.g. 'flawless screen', 'corner crack', 'scratch')...">
+                        <button class="btn-inspect" id="btnRunInspect">
+                            <span id="btnInspectText">Run Diagnostics</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+                    </div>
+
+                    <!-- Sample Presets -->
+                    <div class="sample-pills-row">
+                        <span class="pills-label">Quick Samples:</span>
+                        <button class="pill-chip" data-sample="user_normal_phone">📱 Normal Phone (on Desk)</button>
+                        <button class="pill-chip" data-sample="user_cracked_phone">⚡ Cracked Phone (on Desk)</button>
+                        <button class="pill-chip" data-sample="broken_phone">💥 Broken Screen</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Workspace: Diagnostics & Resolution Breakdown -->
+            <section class="diagnostics-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        <span>Multimodal Diagnostics & Analysis</span>
+                    </div>
+                    <div class="timestamp-badge" id="scanTimestamp">Ready</div>
+                </div>
+
+                <!-- Empty results placeholder -->
+                <div class="diagnostics-empty-state" id="diagEmptyState">
+                    <div class="pulse-radar"></div>
+                    <h4>Awaiting Image Input</h4>
+                    <p>Select an image on the left viewport and click <strong>Run Diagnostics</strong> to generate spatial PatchCore & multimodal telemetry.</p>
+                </div>
+
+                <!-- Active Diagnostics Container -->
+                <div class="diagnostics-content" id="diagContent" style="display: none;">
+                    <!-- Verdict Hero Card -->
+                    <div class="verdict-card" id="verdictCard">
+                        <div class="verdict-meta">
+                            <span class="verdict-sub">Overall Prediction Status</span>
+                            <h2 class="verdict-title" id="verdictTitle">FLAWLESS / NORMAL</h2>
+                            <p class="verdict-desc" id="verdictDesc">No critical spatial micro-anomalies detected on active component surface.</p>
+                        </div>
+                        <div class="verdict-score-box">
+                            <div class="score-ring-wrap">
+                                <span class="score-number" id="confidenceScore">97.3%</span>
+                                <span class="score-label">Confidence</span>
+                            </div>
+                            <div class="severity-tag" id="severityTag">Severity: Low</div>
+                        </div>
+                    </div>
+
+                    <!-- 1. Primary Metric Table -->
+                    <div class="table-section">
+                        <div class="section-title-row">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"></path><path d="M3 9h18"></path><path d="M3 15h18"></path><path d="M9 3v18"></path><path d="M15 3v18"></path></svg>
+                            <h3>Primary Metrics & Decision Breakdown</h3>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="diagnostics-table" id="primaryTable">
+                                <thead>
+                                    <tr>
+                                        <th>Metric</th>
+                                        <th>Measurement</th>
+                                        <th>Calibrated Threshold</th>
+                                        <th>Evaluation</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="primaryTableBody">
+                                    <!-- Dynamic Rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 2. Detailed Diagnostics & Multi-Scale Breakdown Table -->
+                    <div class="table-section">
+                        <div class="section-title-row">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                            <h3>Detailed Diagnostics & Multi-Scale Breakdown</h3>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="diagnostics-table" id="multiscaleTable">
+                                <thead>
+                                    <tr>
+                                        <th>Sub-Inspection Region</th>
+                                        <th>Measurement</th>
+                                        <th>Threshold</th>
+                                        <th>Detection Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="multiscaleTableBody">
+                                    <!-- Dynamic Rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 3. Scale Comparison Deep Dive Section -->
+                    <div class="analysis-section" id="scaleComparisonSection">
+                        <div class="section-title-row">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <h3 id="scaleComparisonTitle">Why the Full-Scale Score Was 0.1964 vs 0.3208 on Display:</h3>
+                        </div>
+
+                        <div class="scale-dive-card">
+                            <ul class="analysis-bullets-list" id="scaleComparisonBullets">
+                                <!-- Dynamic Bullets -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Technical Model Specs -->
+                    <div class="specs-footer">
+                        <div class="specs-chips" id="specsChips">
+                            <!-- Dynamic specs badges -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Hidden canvas for webcam frame extraction -->
+    <canvas id="captureCanvas" style="display: none;"></canvas>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

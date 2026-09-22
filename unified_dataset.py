@@ -14,6 +14,7 @@ import random
 import logging
 from typing import List, Tuple, Dict, Optional
 
+import cv2
 import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader, WeightedRandomSampler
@@ -38,13 +39,35 @@ IMAGENET_MEAN = (0.485, 0.456, 0.406)
 IMAGENET_STD = (0.229, 0.224, 0.225)
 
 
+def apply_clahe_preprocessing(img_pil: Image.Image) -> Image.Image:
+    """
+    Apply OpenCV LAB CLAHE contrast normalization.
+    Normalizes lighting variation across phone cameras, lighting environments, and sensors.
+    """
+    try:
+        rgb_np = np.array(img_pil.convert("RGB"))
+        lab = cv2.cvtColor(rgb_np, cv2.COLOR_RGB2LAB)
+        l, a, b = cv2.split(lab)
+        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+        l_clahe = clahe.apply(l)
+        lab_clahe = cv2.merge((l_clahe, a, b))
+        rgb_clahe = cv2.cvtColor(lab_clahe, cv2.COLOR_LAB2RGB)
+        return Image.fromarray(rgb_clahe)
+    except Exception as e:
+        logger.warning(f"CLAHE preprocessing fallback: {e}")
+        return img_pil
+
+
 def get_train_transform():
     return T.Compose([
+        T.Lambda(apply_clahe_preprocessing),
         T.Resize(IMAGE_SIZE),
         T.RandomHorizontalFlip(0.5),
         T.RandomVerticalFlip(0.3),
         T.RandomRotation(15),
-        T.ColorJitter(brightness=0.1, contrast=0.1, saturation=0.05, hue=0.02),
+        T.RandomAffine(degrees=0, translate=(0.05, 0.05), scale=(0.95, 1.05)),
+        T.ColorJitter(brightness=0.35, contrast=0.35, saturation=0.25, hue=0.08),
+        T.RandomApply([T.GaussianBlur(kernel_size=(3, 5), sigma=(0.1, 2.0))], p=0.3),
         T.ToTensor(),
         T.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD),
     ])
@@ -52,6 +75,7 @@ def get_train_transform():
 
 def get_eval_transform():
     return T.Compose([
+        T.Lambda(apply_clahe_preprocessing),
         T.Resize(IMAGE_SIZE),
         T.ToTensor(),
         T.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD),
@@ -166,13 +190,26 @@ def discover_mvtec_files(category: str, split: str = "train") -> List[dict]:
 
 
 def discover_phone_screen_files() -> List[dict]:
-    """Discover phone_screen files from both original archive and MSD-US datasets."""
+    """Discover phone_screen files from all sources.
+
+    Normal (label=0) sources:
+      - archive/good/           : original controlled-lab good images
+      - MSD-US/train/good/      : MSD-US dataset good images
+      - Image_phones/           : 34 real-world photos of defect-free phones
+                                  (diverse cameras / lighting / angles — enriches PatchCore bank)
+
+    Defect (label=1) sources:
+      - archive/scratch/        : scratched phone screens
+      - MSD-US/test/{oil,scratch,stain}/ : MSD-US defect types
+      - Image_brokenphones/     : 37 real-world photos of cracked/broken phones
+                                  (used as test set for real-world AUROC evaluation)
+    """
     samples = []
-    
-    # 1. Original archive
+
+    # ── 1. Original archive ───────────────────────────────────────────
     good_dir = os.path.join(BASE_DIR, "archive", "good")
     defect_dir = os.path.join(BASE_DIR, "archive", "scratch")
-    
+
     if os.path.isdir(good_dir):
         for f in sorted(os.listdir(good_dir)):
             if f.lower().endswith(('.png', '.jpg', '.jpeg')):
@@ -194,7 +231,7 @@ def discover_phone_screen_files() -> List[dict]:
                     "has_real_depth": False
                 })
 
-    # 2. MSD-US Dataset
+    # ── 2. MSD-US Dataset ─────────────────────────────────────────────
     msd_good = os.path.join(BASE_DIR, "MSD-US", "train", "good")
     msd_defects = [
         os.path.join(BASE_DIR, "MSD-US", "test", "oil"),
@@ -212,7 +249,7 @@ def discover_phone_screen_files() -> List[dict]:
                     "category": "phone_screen",
                     "has_real_depth": False
                 })
-                
+
     for d_dir in msd_defects:
         if os.path.isdir(d_dir):
             for f in sorted(os.listdir(d_dir)):
@@ -224,6 +261,51 @@ def discover_phone_screen_files() -> List[dict]:
                         "category": "phone_screen",
                         "has_real_depth": False
                     })
+
+    # ── 3. Real-world normal phones (Image_phones/) ───────────────────
+    #   34 photos taken with a real phone camera — diverse lighting, angles,
+    #   backgrounds. Adding these to the PatchCore normal bank teaches the
+    #   model what genuine real-world good phones look like and closes the
+    #   domain gap without touching the anomaly threshold.
+    real_good_dir = os.path.join(os.path.dirname(BASE_DIR), "Image_phones")
+    if os.path.isdir(real_good_dir):
+        added = 0
+        for f in sorted(os.listdir(real_good_dir)):
+            if f.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp')):
+                samples.append({
+                    "rgb_path": os.path.join(real_good_dir, f),
+                    "depth_path": None,
+                    "label": 0,
+                    "category": "phone_screen",
+                    "has_real_depth": False
+                })
+                added += 1
+        if added:
+            logger.info(f"  [Image_phones] +{added} real-world normal phone images registered (label=0)")
+    else:
+        logger.warning(f"  [Image_phones] directory not found at {real_good_dir} — skipping")
+
+    # ── 4. Real-world broken phones (Image_brokenphones/) ────────────
+    #   37 photos of cracked/defective phones from a real phone camera.
+    #   These are test-only samples — they enrich AUROC evaluation with
+    #   genuine out-of-distribution defects and are never used for training.
+    real_defect_dir = os.path.join(os.path.dirname(BASE_DIR), "Image_brokenphones")
+    if os.path.isdir(real_defect_dir):
+        added = 0
+        for f in sorted(os.listdir(real_defect_dir)):
+            if f.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp')):
+                samples.append({
+                    "rgb_path": os.path.join(real_defect_dir, f),
+                    "depth_path": None,
+                    "label": 1,
+                    "category": "phone_screen",
+                    "has_real_depth": False
+                })
+                added += 1
+        if added:
+            logger.info(f"  [Image_brokenphones] +{added} real-world defective phone images registered (label=1)")
+    else:
+        logger.warning(f"  [Image_brokenphones] directory not found at {real_defect_dir} — skipping")
 
     return samples
 

@@ -2,7 +2,7 @@
   MULTIMODAL ANOMALY DETECTION - EVALUATION REPORT
   Scoring: HYBRID PATCH-GRID (14x14 = 196 patches)
   SMOOTH categories: MAX patch distance | ORGANIC categories: Top-10 average
-  Generated: 2026-08-14 13:05:27
+  Generated: 2026-08-24 11:23:14
 ================================================================================
 
   HYBRID SCORING RATIONALE:
@@ -12,251 +12,61 @@
       -> Top-10 avg: smooths natural texture noise while detecting real defects.
 
 ------------------------------------------------------------
-  Category: BAGEL  [Scoring: Top-10 avg]
-------------------------------------------------------------
-  Samples:            22 normal, 88 defect
-  Optimal Threshold:  0.052921
-  AUC:                0.7955
-  Accuracy:           0.6909 (69.1%)
-  Precision:          0.9655
-  Recall:             0.6364
-  F1 Score:           0.7671
-  -- Hybrid Scoring (Top-10 avg) --
-  Mean Normal (Top-10 avg): 0.052436
-  Mean Defect (Top-10 avg): 0.054599
-  Separability Gap:        0.002163
-  -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.006391
-  Mean Defect (GAP):       0.008574
-  GAP Separability:        0.002182
-
-------------------------------------------------------------
-  Category: CABLE_GLAND  [Scoring: MAX patch]
-------------------------------------------------------------
-  Samples:            21 normal, 87 defect
-  Optimal Threshold:  0.053335
-  AUC:                0.8153
-  Accuracy:           0.7963 (79.6%)
-  Precision:          0.9333
-  Recall:             0.8046
-  F1 Score:           0.8642
-  -- Hybrid Scoring (MAX patch) --
-  Mean Normal (MAX patch): 0.053414
-  Mean Defect (MAX patch): 0.054931
-  Separability Gap:        0.001517
-  -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.008410
-  Mean Defect (GAP):       0.008999
-  GAP Separability:        0.000590
-
-------------------------------------------------------------
-  Category: CARROT  [Scoring: Top-10 avg]
-------------------------------------------------------------
-  Samples:            27 normal, 132 defect
-  Optimal Threshold:  0.052160
-  AUC:                0.5056
-  Accuracy:           0.4214 (42.1%)
-  Precision:          0.8846
-  Recall:             0.3485
-  F1 Score:           0.5000
-  -- Hybrid Scoring (Top-10 avg) --
-  Mean Normal (Top-10 avg): 0.052706
-  Mean Defect (Top-10 avg): 0.052672
-  Separability Gap:        -0.000034
-  -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.005105
-  Mean Defect (GAP):       0.005654
-  GAP Separability:        0.000549
-
-------------------------------------------------------------
-  Category: COOKIE  [Scoring: Top-10 avg]
-------------------------------------------------------------
-  Samples:            28 normal, 103 defect
-  Optimal Threshold:  0.058113
-  AUC:                0.5201
-  Accuracy:           0.3359 (33.6%)
-  Precision:          0.9000
-  Recall:             0.1748
-  F1 Score:           0.2927
-  -- Hybrid Scoring (Top-10 avg) --
-  Mean Normal (Top-10 avg): 0.055680
-  Mean Defect (Top-10 avg): 0.055972
-  Separability Gap:        0.000293
-  -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.005628
-  Mean Defect (GAP):       0.006173
-  GAP Separability:        0.000545
-
-------------------------------------------------------------
-  Category: DOWEL  [Scoring: MAX patch]
-------------------------------------------------------------
-  Samples:            26 normal, 104 defect
-  Optimal Threshold:  0.056795
-  AUC:                0.6479
-  Accuracy:           0.7615 (76.2%)
-  Precision:          0.8544
-  Recall:             0.8462
-  F1 Score:           0.8502
-  -- Hybrid Scoring (MAX patch) --
-  Mean Normal (MAX patch): 0.058382
-  Mean Defect (MAX patch): 0.061575
-  Separability Gap:        0.003193
-  -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.010617
-  Mean Defect (GAP):       0.010115
-  GAP Separability:        -0.000502
-
-------------------------------------------------------------
-  Category: FOAM  [Scoring: Top-10 avg]
-------------------------------------------------------------
-  Samples:            20 normal, 80 defect
-  Optimal Threshold:  0.075696
-  AUC:                0.7463
-  Accuracy:           0.6000 (60.0%)
-  Precision:          0.9348
-  Recall:             0.5375
-  F1 Score:           0.6825
-  -- Hybrid Scoring (Top-10 avg) --
-  Mean Normal (Top-10 avg): 0.074805
-  Mean Defect (Top-10 avg): 0.076834
-  Separability Gap:        0.002028
-  -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.007550
-  Mean Defect (GAP):       0.009247
-  GAP Separability:        0.001697
-
-------------------------------------------------------------
-  Category: PEACH  [Scoring: Top-10 avg]
-------------------------------------------------------------
-  Samples:            26 normal, 106 defect
-  Optimal Threshold:  0.051379
-  AUC:                0.5116
-  Accuracy:           0.5227 (52.3%)
-  Precision:          0.8525
-  Recall:             0.4906
-  F1 Score:           0.6228
-  -- Hybrid Scoring (Top-10 avg) --
-  Mean Normal (Top-10 avg): 0.051323
-  Mean Defect (Top-10 avg): 0.051417
-  Separability Gap:        0.000095
-  -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.007773
-  Mean Defect (GAP):       0.007985
-  GAP Separability:        0.000211
-
-------------------------------------------------------------
-  Category: POTATO  [Scoring: Top-10 avg]
-------------------------------------------------------------
-  Samples:            22 normal, 92 defect
-  Optimal Threshold:  0.051008
-  AUC:                0.5583
-  Accuracy:           0.6053 (60.5%)
-  Precision:          0.8615
-  Recall:             0.6087
-  F1 Score:           0.7134
-  -- Hybrid Scoring (Top-10 avg) --
-  Mean Normal (Top-10 avg): 0.051255
-  Mean Defect (Top-10 avg): 0.051367
-  Separability Gap:        0.000111
-  -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.007658
-  Mean Defect (GAP):       0.006061
-  GAP Separability:        -0.001597
-
-------------------------------------------------------------
-  Category: ROPE  [Scoring: Top-10 avg]
-------------------------------------------------------------
-  Samples:            32 normal, 69 defect
-  Optimal Threshold:  0.066193
-  AUC:                0.7532
-  Accuracy:           0.7030 (70.3%)
-  Precision:          0.8824
-  Recall:             0.6522
-  F1 Score:           0.7500
-  -- Hybrid Scoring (Top-10 avg) --
-  Mean Normal (Top-10 avg): 0.065468
-  Mean Defect (Top-10 avg): 0.072028
-  Separability Gap:        0.006560
-  -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.007209
-  Mean Defect (GAP):       0.008760
-  GAP Separability:        0.001551
-
-------------------------------------------------------------
-  Category: TIRE  [Scoring: Top-10 avg]
-------------------------------------------------------------
-  Samples:            25 normal, 87 defect
-  Optimal Threshold:  0.059701
-  AUC:                0.4322
-  Accuracy:           0.7768 (77.7%)
-  Precision:          0.7870
-  Recall:             0.9770
-  F1 Score:           0.8718
-  -- Hybrid Scoring (Top-10 avg) --
-  Mean Normal (Top-10 avg): 0.062100
-  Mean Defect (Top-10 avg): 0.061723
-  Separability Gap:        -0.000376
-  -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.007585
-  Mean Defect (GAP):       0.008457
-  GAP Separability:        0.000871
-
-------------------------------------------------------------
   Category: PHONE_SCREEN  [Scoring: MAX patch]
 ------------------------------------------------------------
   Samples:            8 normal, 320 defect
-  Optimal Threshold:  0.139732
-  AUC:                0.9363
-  Accuracy:           0.9909 (99.1%)
+  Optimal Threshold:  0.218187
+  AUC:                0.9691
+  Accuracy:           0.9939 (99.4%)
   Precision:          0.9969
-  Recall:             0.9938
-  F1 Score:           0.9953
+  Recall:             0.9969
+  F1 Score:           0.9969
   -- Hybrid Scoring (MAX patch) --
-  Mean Normal (MAX patch): 0.125643
-  Mean Defect (MAX patch): 0.245419
-  Separability Gap:        0.119775
+  Mean Normal (MAX patch): 0.148286
+  Mean Defect (MAX patch): 0.310805
+  Separability Gap:        0.162519
   -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.014714
-  Mean Defect (GAP):       0.674806
-  GAP Separability:        0.660092
+  Mean Normal (GAP):       0.076121
+  Mean Defect (GAP):       1.174957
+  GAP Separability:        1.098836
 
 ------------------------------------------------------------
   Category: CAR_METAL  [Scoring: MAX patch]
 ------------------------------------------------------------
   Samples:            48 normal, 240 defect
-  Optimal Threshold:  0.533049
+  Optimal Threshold:  0.219204
   AUC:                1.0000
   Accuracy:           0.9965 (99.7%)
   Precision:          1.0000
   Recall:             0.9958
   F1 Score:           0.9979
   -- Hybrid Scoring (MAX patch) --
-  Mean Normal (MAX patch): 0.074656
-  Mean Defect (MAX patch): 0.903602
-  Separability Gap:        0.828946
+  Mean Normal (MAX patch): 0.075973
+  Mean Defect (MAX patch): 0.634155
+  Separability Gap:        0.558182
   -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.009676
-  Mean Defect (GAP):       1.011860
-  GAP Separability:        1.002184
+  Mean Normal (GAP):       0.008330
+  Mean Defect (GAP):       1.085865
+  GAP Separability:        1.077535
 
 ------------------------------------------------------------
   Category: PCB  [Scoring: MAX patch]
 ------------------------------------------------------------
   Samples:            300 normal, 300 defect
-  Optimal Threshold:  0.070495
-  AUC:                0.7744
-  Accuracy:           0.7633 (76.3%)
-  Precision:          0.7257
-  Recall:             0.8467
-  F1 Score:           0.7815
+  Optimal Threshold:  0.098991
+  AUC:                0.8200
+  Accuracy:           0.8167 (81.7%)
+  Precision:          0.7540
+  Recall:             0.9400
+  F1 Score:           0.8368
   -- Hybrid Scoring (MAX patch) --
-  Mean Normal (MAX patch): 0.077247
-  Mean Defect (MAX patch): 0.095408
-  Separability Gap:        0.018161
+  Mean Normal (MAX patch): 0.109140
+  Mean Defect (MAX patch): 0.125823
+  Separability Gap:        0.016682
   -- Global GAP Scoring (for comparison) --
-  Mean Normal (GAP):       0.025881
-  Mean Defect (GAP):       0.148850
-  GAP Separability:        0.122969
+  Mean Normal (GAP):       0.026375
+  Mean Defect (GAP):       0.154712
+  GAP Separability:        0.128338
 
 
 ================================================================================
@@ -264,19 +74,9 @@
 ================================================================================
   Category                AUC    Threshold       F1   Accuracy    Sep.Gap
   ------------------ -------- ------------ -------- ---------- ----------
-  bagel                0.7955     0.052921   0.7671      69.1%     0.0022
-  cable_gland          0.8153     0.053335   0.8642      79.6%     0.0015
-  carrot               0.5056     0.052160   0.5000      42.1%    -0.0000
-  cookie               0.5201     0.058113   0.2927      33.6%     0.0003
-  dowel                0.6479     0.056795   0.8502      76.2%     0.0032
-  foam                 0.7463     0.075696   0.6825      60.0%     0.0020
-  peach                0.5116     0.051379   0.6228      52.3%     0.0001
-  potato               0.5583     0.051008   0.7134      60.5%     0.0001
-  rope                 0.7532     0.066193   0.7500      70.3%     0.0066
-  tire                 0.4322     0.059701   0.8718      77.7%    -0.0004
-  phone_screen         0.9363     0.139732   0.9953      99.1%     0.1198
-  car_metal            1.0000     0.533049   0.9979      99.7%     0.8289
-  pcb                  0.7744     0.070495   0.7815      76.3%     0.0182
+  phone_screen         0.9691     0.218187   0.9969      99.4%     0.1625
+  car_metal            1.0000     0.219204   0.9979      99.7%     0.5582
+  pcb                  0.8200     0.098991   0.8368      81.7%     0.0167
 
 
 ================================================================================
@@ -284,17 +84,7 @@
   NOTE: These are PATCH-GRID thresholds (max patch distance)
 ================================================================================
   threshold_map = {
-      "bagel": 0.052921,
-      "cable_gland": 0.053335,
-      "carrot": 0.05216,
-      "cookie": 0.058113,
-      "dowel": 0.056795,
-      "foam": 0.075696,
-      "peach": 0.051379,
-      "potato": 0.051008,
-      "rope": 0.066193,
-      "tire": 0.059701,
-      "phone_screen": 0.139732,
-      "car_metal": 0.533049,
-      "pcb": 0.070495,
+      "phone_screen": 0.218187,
+      "car_metal": 0.219204,
+      "pcb": 0.098991,
   }
